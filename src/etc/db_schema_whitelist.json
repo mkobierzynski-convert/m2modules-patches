@@ -1,0 +1,29 @@
+{
+    "limesharp_stockists_stores": {
+        "column": {
+            "stockist_id": true,
+            "store_id": true,
+            "name": true,
+            "address": true,
+            "city": true,
+            "country": true,
+            "postcode": true,
+            "region": true,
+            "email": true,
+            "phone": true,
+            "link": true,
+            "image": true,
+            "latitude": true,
+            "longitude": true,
+            "status": true,
+            "updated_at": true,
+            "created_at": true
+        },
+        "index": {
+            "FTI_9A544D93BBDE372BE0853CF389FE7D8F": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

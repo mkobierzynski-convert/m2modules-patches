@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Convert Team
+ * @copyright Copyright (c) Convert (https://www.convert.no/)
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="limesharp_stockists_stores" resource="default" engine="innodb" comment="List of stores">
+        <column xsi:type="int" name="stockist_id" unsigned="true" nullable="false" identity="true" comment="Store ID"/>
+        <column xsi:type="varchar" name="store_id" nullable="false" length="255" comment="Store ID"/>
+        <column xsi:type="varchar" name="name" nullable="false" length="255" comment="Store Name"/>
+        <column xsi:type="varchar" name="address" nullable="false" length="255" comment="Store Address"/>
+        <column xsi:type="varchar" name="city" nullable="true" length="255" comment="City"/>
+        <column xsi:type="varchar" name="country" nullable="true" length="255" comment="Country"/>
+        <column xsi:type="varchar" name="postcode" nullable="true" length="255" comment="Postcode"/>
+        <column xsi:type="varchar" name="region" nullable="true" length="255" comment="Region"/>
+        <column xsi:type="varchar" name="email" nullable="true" length="255" comment="Email"/>
+        <column xsi:type="varchar" name="phone" nullable="true" length="255" comment="Phone"/>
+        <column xsi:type="varchar" name="link" nullable="true" length="255" comment="Link"/>
+        <column xsi:type="varchar" name="image" nullable="true" length="255" comment="Image"/>
+        <column xsi:type="varchar" name="latitude" nullable="true" length="255" comment="Latitude"/>
+        <column xsi:type="varchar" name="longitude" nullable="true" length="255" comment="Longitude"/>
+        <column xsi:type="varchar" name="status" nullable="false" length="255" default="1" comment="Status"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="true" default="CURRENT_TIMESTAMP"
+                comment="Update at"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="true" default="CURRENT_TIMESTAMP"
+                comment="Creation Time"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="stockist_id"/>
+            <column name="store_id"/>
+        </constraint>
+        <index referenceId="LIMESHARP_STOCKISTS_STORES_NAME_PHOTO" indexType="fulltext">
+            <column name="name"/>
+            <column name="address"/>
+            <column name="city"/>
+            <column name="country"/>
+            <column name="region"/>
+            <column name="link"/>
+            <column name="email"/>
+            <column name="postcode"/>
+            <column name="phone"/>
+            <column name="latitude"/>
+            <column name="longitude"/>
+        </index>
+    </table>
+</schema>
